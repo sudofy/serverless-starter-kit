@@ -1,0 +1,58 @@
+{
+  "name": "sudox-api",
+  "version": "0.0.1",
+  "description": "Sudox api",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sls offline start -t --stage test",
+    "deploy": "sls deploy",
+    "deploy:test": "npm run deploy -- --stage test",
+    "deploy:stage": "npm run deploy -- --stage stage",
+    "deploy:prod": "npm run deploy -- --stage prtod",
+    "lint": "eslint ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://alqamasudofy@bitbucket.org/sudox-app/sudox-api.git"
+  },
+  "keywords": [
+    "sudox-api"
+  ],
+  "author": "Alqama Bin Sadiq",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/sudox-app/sudox-api#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-source-map-support": "^2.0.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-import": "^2.7.0",
+    "noop-webpack-plugin": "^1.0.1",
+    "serverless-offline": "^3.31.0",
+    "serverless-plugin-split-stacks": "^1.7.0",
+    "serverless-webpack": "^5.2.0",
+    "webpack": "^4.23.1",
+    "webpack-node-externals": "^1.7.2",
+    "yargs": "^12.0.2"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "aws-sdk": "^2.345.0",
+    "boom": "^7.2.0",
+    "jsonwebtoken": "^8.3.0",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^5.3.13",
+    "ramda": "^0.25.0",
+    "serialize-error": "^3.0.0",
+    "shortid": "^2.2.14",
+    "universal-analytics": "^0.4.20"
+  }
+}
