@@ -1,0 +1,59 @@
+service: sudox-api
+
+package:
+  exclude:
+    - node_modules/serverless-offline/**
+    - node_modules/serverless-webpack/**
+    - node_modules/serverless-plugin-split-stacks/**
+    - node_modules/aws-sdk
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-plugin-split-stacks
+
+provider:
+  name: aws
+  runtime: 'nodejs8.10'
+  stage: ${opt:stage, 'test'} # prod #dev #test
+  region: us-east-1
+  useNestedStacks: true
+  environment:
+    SERVICE_NAME: ${self:service}
+    REGION: ${self:provider.region}
+    API_STAGE: ${self:custom.stage}
+    COGNITO_POOL_ID: ${self:custom.COGNITO_POOL_ID}
+    COGNITO_CLIENT_ID: ${self:custom.COGNITO_CLIENT_ID}
+    MONGODB_URI: ${file(./cred.yml):${self:custom.stage}.MONGODB_URI}
+    RAVEN_CONFIG: ${file(./config.yml):${self:custom.stage}.RAVEN_CONFIG}
+    GA_TRACKING_ID: ${file(./config.yml):${self:custom.stage}.GA_TRACKING_ID}
+    HEALTH_STATUS: 'good'
+    HEALTH_MAINTAIN: false
+    HEALTH_VERSION: '0.0.1'
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "cognito-idp:*"
+      Resource:
+        - "arn:aws:cognito-idp:us-east-1:*"
+    - Effect: Allow
+      Action:
+        - "SNS:*"
+      Resource:
+        - "arn:aws:sns:us-east-1:*"
+    - Effect: Allow
+      Action:
+        - "cloudwatch:*"
+        - "logs:*"
+      Resource:
+        - "*"
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  COGNITO_POOL_ID: ${file(./config.yml):${self:custom.stage}.COGNITO_POOL_ID}
+  COGNITO_CLIENT_ID: ${file(./config.yml):${self:custom.stage}.COGNITO_CLIENT_ID}
+  COGNITO_POOL_ARN: ${file(./config.yml):${self:custom.stage}.COGNITO_POOL_ARN}
+  webpackIncludeModules: true
+  splitStacks:
+    perLambda: true
+
+functions: ${file(./functions.yml)}
