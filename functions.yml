@@ -1,5 +1,5 @@
 auth-login:
-  handler: "src/auth/auth-handler.login"
+  handler: "src/auth/auth.handler.login"
   events:
     - http:
         method: "POST"
@@ -9,7 +9,7 @@ auth-login:
           name: "authorizer"
           arn: "${file(./serverless.yml):custom.COGNITO_POOL_ARN}"
 auth-register:
-  handler: "src/auth/auth-handler.createUser"
+  handler: "src/auth/auth.handler.createUser"
   events:
     - http:
         method: "POST"
@@ -19,14 +19,14 @@ auth-register:
           name: "authorizer"
           arn: "${file(./serverless.yml):custom.COGNITO_POOL_ARN}"
 auth-forgotPassword:
-  handler: "src/auth/auth-handler.forgotPassword"
+  handler: "src/auth/auth.handler.forgotPassword"
   events:
     - http:
         method: "POST"
         path: "auth/forgot-password"
         cors: true
 auth-verifyPin:
-  handler: "src/auth/auth-handler.verifyPin"
+  handler: "src/auth/auth.handler.verifyPin"
   events:
     - http:
         method: "POST"
