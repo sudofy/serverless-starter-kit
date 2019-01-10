@@ -1,7 +1,7 @@
 
 const AWS = require('aws-sdk');
 
-export default class SingUpModelClass {
+export default class AuthModelClass {
   constructor() {
     this.cognito = new AWS.CognitoIdentityServiceProvider({
       region: process.env.REGION,
