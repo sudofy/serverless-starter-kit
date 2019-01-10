@@ -1,7 +1,7 @@
 {
-  "name": "sudox-api",
+  "name": "serverless-starter-kit",
   "version": "0.0.1",
-  "description": "Sudox api",
+  "description": "Serverless Starter Kit",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "sls offline start -t --stage test",
@@ -47,12 +47,14 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "aws-sdk": "^2.345.0",
     "boom": "^7.2.0",
+    "joi-objectid": "^2.0.0",
     "jsonwebtoken": "^8.3.0",
     "mailgun-js": "^0.22.0",
     "mongoose": "^5.3.13",
     "ramda": "^0.25.0",
     "serialize-error": "^3.0.0",
     "shortid": "^2.2.14",
+    "uglifyjs-webpack-plugin": "^2.1.1",
     "universal-analytics": "^0.4.20"
   }
 }
