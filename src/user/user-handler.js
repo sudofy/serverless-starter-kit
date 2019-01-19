@@ -4,7 +4,7 @@ import Boom from 'boom';
 import connectToDatabase from '../utils/db.connection';
 import * as responseMessages from '../utils/messages';
 import UserCtrl from './user.controller';
-import { checkUpdateUserSchema, checkChangePasswordSchema } from '../utils/validation';
+import { checkUpdateUserSchema, checkChangePasswordSchema } from './user.validator';
 
 const user = new UserCtrl();
 
