@@ -91,7 +91,7 @@ export default class AuthController {
             Value: preferredUsername
           },
         ],
-        MessageAction: 'SUPPRESS', // new account is created please verofy.
+        MessageAction: 'SUPPRESS',
       };
 
       let signupData;
