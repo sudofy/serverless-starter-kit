@@ -1,5 +1,5 @@
 module.exports = {
-  INITIATE_AUTH_ERR: 'Ahhh... Can we try that again? It looks like something went wrong trying to sign you in.',
+  INITIATE_AUTH_ERR: 'Something went wrong while initiating auth.',
   GET_BY_USERNAME_ERR: 'Error occured while getting user by cognito username',
   GET_BY_COGNITO_ID_ERR: 'Error occured while getting user by cognito Id',
   ALREADY_EXIST_USERNAME: 'Have I seen you here before? It looks like someone is already using that username. Please try another one.',
