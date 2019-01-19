@@ -1,6 +1,6 @@
 import { parseAPIGatewayEvent } from 'utils/parser';
 import { success, failure } from 'utils/response';
-import { checkSignUpSchema, checkSignInSchema, checkForgotPasswordSchema, checkVerifyPinSchema } from 'utils/validation';
+import { checkSignUpSchema, checkSignInSchema, checkForgotPasswordSchema, checkVerifyPinSchema } from './auth.validator';
 import Boom from 'boom';
 import connectToDatabase from '../utils/db.connection';
 import AuthController from './auth.controller';
