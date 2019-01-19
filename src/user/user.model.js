@@ -42,17 +42,7 @@ export default class UserModelClass {
       Username: cognitoUserName,
       UserAttributes: R.compose(
         R.map((attribName) => {
-          if (attribName === 'firstName') {
-            return {
-              Name: 'custom:firstName',
-              Value: attributes.firstName,
-            };
-          } else if (attribName === 'lastName') {
-            return {
-              Name: 'custom:lastName',
-              Value: attributes.lastName
-            };
-          } else if (attribName === 'phone') {
+          if (attribName === 'phone') {
             return {
               Name: 'phone_number',
               Value: attributes.phone

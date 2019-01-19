@@ -64,14 +64,6 @@ export default class AuthController {
       };
       const UserAttributes = [
         {
-          Name: 'custom:firstName',
-          Value: firstName
-        },
-        {
-          Name: 'custom:lastName',
-          Value: lastName
-        },
-        {
           Name: 'phone_number',
           Value: phone
         },
