@@ -52,6 +52,7 @@
     "mailgun-js": "^0.22.0",
     "mongoose": "^5.3.13",
     "ramda": "^0.25.0",
+    "raven": "^2.6.4",
     "serialize-error": "^3.0.0",
     "shortid": "^2.2.14",
     "uglifyjs-webpack-plugin": "^2.1.1",
