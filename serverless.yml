@@ -25,7 +25,6 @@ provider:
     COGNITO_POOL_ID: ${self:custom.COGNITO_POOL_ID}
     COGNITO_CLIENT_ID: ${self:custom.COGNITO_CLIENT_ID}
     MONGODB_URI: ${file(./cred.yml):${self:custom.stage}.MONGODB_URI}
-    RAVEN_CONFIG: ${file(./config.yml):${self:custom.stage}.RAVEN_CONFIG}
     GA_TRACKING_ID: ${file(./config.yml):${self:custom.stage}.GA_TRACKING_ID}
     HEALTH_STATUS: 'good'
     HEALTH_MAINTAIN: false
